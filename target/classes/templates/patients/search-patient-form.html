@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Search Patient</title>
+</head>
+
+<body>
+
+	<div class="container">
+	
+		<h3>Patient Directory</h3>
+		<hr>
+		
+		<p class="h4 mb-4">Search Patient</p>
+	
+			<!-- The form -->
+		<form class="demo" action="#" th:action="@{/patients/searchResult}"
+						 th:object="${patient}" method=GET>
+		  <input type="text" placeholder="Enter the Full Name" name="fullName" id="fullName" th:value="${fullName}" required>
+		  <button type="submit"><i class="fa fa-search"></i></button>
+		</form>
+	
+	<hr>
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Full Name</th>
+				<th>Gender</th>
+				<th>Phone Number</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="tempPatient : ${patient}">
+			
+				<td th:text="${tempPatient.fullName}" />	
+				<td th:text="${tempPatient.gender}" />	
+				<td th:text="${tempPatient.phoneNumber}" />	
+				
+			</tr>
+		</tbody>		
+	</table>
+	
+		<hr>
+		<a th:href="@{/patients/list}">Back to Patients List</a>
+		
+	</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

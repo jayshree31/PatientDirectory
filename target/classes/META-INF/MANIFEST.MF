@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: patientupdates
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Jayu
+Implementation-Vendor-Id: com.jayshreedesai.patient
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://spring.io/projects/spring-boot/patientupda
+ tes
+Created-By: Maven Integration for Eclipse
+
